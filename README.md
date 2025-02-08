@@ -2,12 +2,23 @@
 
 - Checking current nvidia driver installed
 
-```python
+```bash
 cat /proc/driver/nvidia/version
 ```
 
 - Checking cuda version
 
-```python
+```bash
 nvcc -V
+```
+- check fedora version
+
+```bash
+cat /etc/fedora-release
+```
+
+- see kernel version
+
+```bash
+uname -r
 ```
