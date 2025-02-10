@@ -50,3 +50,20 @@ python -m pip cache info
 # to clear pip cache
 python -m pip cache purge
 ```
+
+
+
+
+- check ssh login history
+- https://askubuntu.com/questions/387664/is-there-a-way-to-check-if-others-are-logged-into-server-when-you-are
+- https://unix.stackexchange.com/questions/123029/history-of-ip-addresses-that-accessed-a-server-via-ssh
+```bash
+journalctl -r /usr/sbin/sshd
+
+# To see login history for users you can use last -i. This will show all logins and IP addresses since start of current logfile /var/log/wtmp
+last -i | sort -r | uniq -w 20
+
+who -u
+
+zgrep sshd /var/log/auth.log* | grep rhost | sed -re 's/.*rhost=([^ ]+).*/\1/' | sort -u
+```
