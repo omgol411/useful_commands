@@ -15,12 +15,29 @@ nvcc -V
 
 ```bash
 cat /etc/fedora-release
+cat /etc/*-release
 ```
 
-- see kernel version
+- check firmware type of your system (`BIOS` or `UEFI`)
+```bash
+[ -d /sys/firmware/efi ] && echo UEFI || echo BIOS
+```
+- List available disks
+```bash
+lsblk -f -p
+```
+
+- see current kernel version
 
 ```bash
 uname -r
+# or
+uname -mrs
+```
+
+- see available kernels
+```bash
+rpm -qa kernel  # fedora
 ```
 
 - conda remove packages and tarballs
@@ -50,9 +67,6 @@ python -m pip cache info
 # to clear pip cache
 python -m pip cache purge
 ```
-
-
-
 
 - check ssh login history
 - https://askubuntu.com/questions/387664/is-there-a-way-to-check-if-others-are-logged-into-server-when-you-are
