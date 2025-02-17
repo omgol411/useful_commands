@@ -81,3 +81,10 @@ who -u
 
 zgrep sshd /var/log/auth.log* | grep rhost | sed -re 's/.*rhost=([^ ]+).*/\1/' | sort -u
 ```
+
+- Check available repos (fedora)
+```bash
+grep -E "^\[.*]" /etc/yum.repos.d/*
+```
+
+
