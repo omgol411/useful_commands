@@ -87,4 +87,8 @@ zgrep sshd /var/log/auth.log* | grep rhost | sed -re 's/.*rhost=([^ ]+).*/\1/' |
 grep -E "^\[.*]" /etc/yum.repos.d/*
 ```
 
+- full paths of the files and directories in the current directory
+```bash
+find "$PWD"
+```
 
