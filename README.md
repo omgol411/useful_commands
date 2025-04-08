@@ -92,3 +92,7 @@ grep -E "^\[.*]" /etc/yum.repos.d/*
 find "$PWD"
 ```
 
+- converting `pdf` (latex generated) to `docx` file.
+```bash
+pandoc my_tex_file.tex -o your_docx_file.docx
+```
