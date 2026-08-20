@@ -96,3 +96,17 @@ find "$PWD"
 ```bash
 pandoc my_tex_file.tex -o your_docx_file.docx
 ```
+
+## github
+
+- Submodule - force update
+```bash
+git submodule update --init --recursive --remote --force
+```
+
+- Submodule - complete reset
+```bash
+git submodule deinit -f <submodulename>
+rm -rf .git/modules/<path_to_submodule>
+git submodule update --init --recursive
+```
